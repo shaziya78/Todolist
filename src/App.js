@@ -11,7 +11,9 @@ const TaskList = () => {
 
   useEffect(() => {
     axios
-      .get("https://todo-backend-alpha-ten.vercel.app/api/tasks")
+      .get(
+        "https://todo-backend-92durdigk-shaziya78s-projects.vercel.app/api/tasks"
+      )
       .then((response) => {
         setTasks(response.data);
       });
@@ -21,7 +23,7 @@ const TaskList = () => {
     if (newTask.trim()) {
       axios
         .post(
-          "https://todo-backend-gcyrvc52y-shaziya78s-projects.vercel.app/api/tasks",
+          "https://todo-backend-92durdigk-shaziya78s-projects.vercel.app/api/tasks",
           { title: newTask, completed: false }
         )
         .then((response) => {
@@ -35,7 +37,7 @@ const TaskList = () => {
     setDeletingTask(id); // Set the task that is being deleted
     axios
       .delete(
-        `https://todo-backend-gcyrvc52y-shaziya78s-projects.vercel.app/api/tasks/${id}`
+        `https://todo-backend-92durdigk-shaziya78s-projects.vercel.app/api/tasks/${id}`
       )
       .then(() => {
         setTasks(tasks.filter((task) => task._id !== id)); // Remove task after animation
@@ -53,7 +55,7 @@ const TaskList = () => {
     if (editedTitle.trim()) {
       axios
         .put(
-          `https://todo-backend-gcyrvc52y-shaziya78s-projects.vercel.app/api/tasks/${editingTask}`,
+          `https://todo-backend-92durdigk-shaziya78s-projects.vercel.app/api/tasks/${editingTask}`,
           { title: editedTitle }
         )
         .then((response) => {
